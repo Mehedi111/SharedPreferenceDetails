@@ -10,6 +10,12 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Usernaem"
+        android:id="@+id/username"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/email"
         android:hint="eamil"
         />
@@ -20,6 +26,13 @@
         android:hint="Password"
         android:id="@+id/password"
         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:id="@+id/age"
+        />
+
 
     <Button
         android:layout_width="match_parent"
@@ -36,18 +49,20 @@
         android:layout_height="wrap_content"
         android:onClick="deleteData"
         android:text="delete"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv"
-        android:layout_gravity="center"
-        />
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="jump"
         android:text="jump"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv"
+        android:layout_gravity="center"
         />
 
 </LinearLayout>

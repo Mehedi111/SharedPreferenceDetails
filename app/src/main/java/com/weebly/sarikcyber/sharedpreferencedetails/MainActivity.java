@@ -10,37 +10,48 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText email, password;
+    EditText email, password,name, age;
     TextView show;
     Shared s;
-
+    String n;
+    String p;
+    Model model;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        name = findViewById(R.id.username);
+        age = findViewById(R.id.age);
         show = findViewById(R.id.tv);
+        model = new Model();
 
         s = new Shared(this);
 
     }
 
     public void saveData(View view) {
-        String nameR = email.getText().toString();
+        String mail = email.getText().toString();
         String pass = password.getText().toString();
+        String userName = name.getText().toString();
+        String userAge = age.getText().toString();
 
-        s.setData(nameR, pass);
+        s.setData(mail, pass);
+        model.setUserName(userName);
+        model.setUserAge(userAge);
 
     }
 
     public void showData(View view) {
 
-        String n = s.getEmail();
-        String p = s.getPassword();
+        n = s.getEmail();
+        p = s.getPassword();
 
-        show.setText(n +"\n"+p);
+
+        show.setText(model.getUserName() + "\n" + n + "\n" + p + "\n" + model.getUserAge());
     }
+
 
     public void deleteData(View view) {
         s.clear();
@@ -51,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent i = new Intent(this,Main2Activity.class);
+        i.putExtra("model",model);
         startActivity(i);
     }
 }
